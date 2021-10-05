@@ -43,7 +43,7 @@ I8                             8I
     print (f"{Fore.MAGENTA}Prefijos: %%, $, #, ##, &&")
 
 @client.event
-async def k(message):
+async def on_message(message):
     if message.content == '%%':
         await message.delete()
         async for message in message.channel.history(limit=100000).filter(lambda m: m.author == client.user).map(lambda m: m):
